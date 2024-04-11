@@ -20,7 +20,7 @@ module RingArea
   # JPL Publication 07-03, Jet Propulsion
   # Laboratory, Pasadena, CA, June 2007 https://trs.jpl.nasa.gov/handle/2014/40409
   #
-  # `coords` - Ring Coordinates as [[longitude, latitude], ...]
+  # `coords` - Ring Coordinates as `[[longitude1, latitude1], [longitude2, latitude2], ...]`
   #
   # Return the approximate signed geodesic area of the polygon in square meters.
   #

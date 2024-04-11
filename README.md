@@ -37,7 +37,7 @@ coordinates = [
 RingArea.ring_area(coordinates)
 # => 7748891609977.456
 ```
-Accepts an `Array(Array(Number))` of Ring Coordinates.
+Accepts an `Array(Array(Number))` of Ring Coordinates as `[[longitude1, latitude1], [longitude2, latitude2], ...]`.
 
 Returns the approximate signed geodesic area of the polygon in square meters.
 
