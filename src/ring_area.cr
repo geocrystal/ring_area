@@ -25,7 +25,7 @@ module RingArea
   # Return the approximate signed geodesic area of the polygon in square meters.
   #
   # https://github.com/Turfjs/turf/blob/master/packages/turf-area/index.ts
-  def ring_area(coords : Array(Array(Int32 | Float32 | Float64))) : Float64
+  def ring_area(coords : Array(Array(Int32 | Float32 | Float64))) : Float32 | Float64
     coords_length = coords.size
 
     return 0f64 if coords_length <= 2
