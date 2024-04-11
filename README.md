@@ -1,5 +1,9 @@
 # ring_area
 
+[![Crystal CI](https://github.com/geocrystal/ring_area/actions/workflows/crystal.yml/badge.svg)](https://github.com/geocrystal/ring_area/actions/workflows/crystal.yml)
+[![GitHub release](https://img.shields.io/github/release/geocrystal/ring_area.svg)](https://github.com/mamgeocrystalantoha/ring_area/releases)
+[![License](https://img.shields.io/github/license/geocrystal/ring_area.svg)](https://github.com/geocrystal/ring_area/blob/main/LICENSE)
+
 Calculate the approximate area of the polygon were it projected onto the earth.
 
 ## Installation
