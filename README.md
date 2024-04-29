@@ -20,8 +20,6 @@ Calculate the approximate area of the polygon were it projected onto the earth.
 
 ## Usage
 
-Calling `RingArea.ring_area` returns a `RingArea::Area` object which can provide output in kilometers, meters, miles, feet, etc.
-
 ```crystal
 require "ring_area"
 
@@ -41,7 +39,7 @@ RingArea.ring_area(coordinates).to_meters
 ```
 Accepts an `Array(Array(Number))` of Ring Coordinates as `[[longitude1, latitude1], [longitude2, latitude2], ...]`.
 
-Returns the approximate signed geodesic area of the polygon in square meters.
+Returns a `RingArea::Area` object which can provide output in kilometers, meters, miles, feet, etc.
 
 ## Contributing
 
