@@ -14,5 +14,6 @@ describe RingArea do
     ]
 
     RingArea.ring_area(coordinates).should eq(7748891609977.456)
+    RingArea.ring_area(coordinates, :kilometres).should eq(7748891.609977456)
   end
 end

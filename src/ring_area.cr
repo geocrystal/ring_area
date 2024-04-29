@@ -7,6 +7,24 @@ module RingArea
   # It's derived from the square of the Earth's radius divided by 2.
   FACTOR = (EARTH_RADIUS * EARTH_RADIUS) / 2
 
+  FACTORS = {
+    acres:         0.000247105,
+    centimeters:   10000,
+    centimetres:   10000,
+    feet:          10.763910417,
+    hectares:      0.0001,
+    inches:        1550.003100006,
+    kilometers:    0.000001,
+    kilometres:    0.000001,
+    meters:        1,
+    metres:        1,
+    miles:         3.86e-7,
+    nauticalmiles: 2.9155334959812285e-7,
+    millimeters:   1000000,
+    millimetres:   1000000,
+    yards:         1.195990046,
+  }
+
   # A constant used for converting degrees to radians.
   # Represents the ratio of PI to 180.
   PI_OVER_180 = Math::PI / 180
@@ -25,7 +43,7 @@ module RingArea
   # Return the approximate signed geodesic area of the polygon in square meters.
   #
   # https://github.com/Turfjs/turf/blob/master/packages/turf-area/index.ts
-  def ring_area(coords : Array(Array(Int32 | Float32 | Float64))) : Float64
+  def ring_area(coords : Array(Array(Int32 | Float32 | Float64)), unit : Symbol = :meters) : Float64
     coords_length = coords.size
 
     return 0f64 if coords_length <= 2
@@ -44,6 +62,7 @@ module RingArea
       total += (upper_x - lower_x) * Math.sin(middle_y)
     end
 
-    total.abs * FACTOR
+    factor = FACTORS[unit]
+    total.abs * FACTOR * factor
   end
 end
