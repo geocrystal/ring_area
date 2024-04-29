@@ -25,6 +25,8 @@ module RingArea
     yards:         1.195990046,
   }
 
+  alias Number = Int32 | Float32 | Float64
+
   # A constant used for converting degrees to radians.
   # Represents the ratio of PI to 180.
   PI_OVER_180 = Math::PI / 180
@@ -40,13 +42,13 @@ module RingArea
   #
   # `coords` - Ring Coordinates as `[[longitude1, latitude1], [longitude2, latitude2], ...]`
   #
-  # Return the approximate signed geodesic area of the polygon in square meters.
+  # Return the approximate geodesic area of the polygon.
   #
   # https://github.com/Turfjs/turf/blob/master/packages/turf-area/index.ts
-  def ring_area(coords : Array(Array(Int32 | Float32 | Float64)), unit : Symbol = :meters) : Float64
+  def ring_area(coords : Array(Array(Number))) : RingArea::Area
     coords_length = coords.size
 
-    return 0f64 if coords_length <= 2
+    return RingArea::Area.new(0f64) if coords_length <= 2
 
     total = 0f64
 
@@ -62,7 +64,8 @@ module RingArea
       total += (upper_x - lower_x) * Math.sin(middle_y)
     end
 
-    factor = FACTORS[unit]
-    total.abs * FACTOR * factor
+    RingArea::Area.new(total.abs)
   end
 end
+
+require "./ring_area/*"
