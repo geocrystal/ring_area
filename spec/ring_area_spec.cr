@@ -33,4 +33,13 @@ describe RingArea do
     it { (ring_area_1 == ring_area_2).should be_false }
     it { (ring_area_1 > ring_area_2).should be_true }
   end
+
+  describe "operations" do
+    ring_area_1 = RingArea.ring_area(coordinates)
+    ring_area_2 = RingArea.ring_area(other_coordinates)
+
+    it { (ring_area_1 + ring_area_2).should be_a(RingArea::Area) }
+    it { (ring_area_1 + ring_area_2).to_meters.should eq(7798346482558.176) }
+    it { (ring_area_1 - ring_area_2).to_meters.should eq(7699436737396.736) }
+  end
 end
