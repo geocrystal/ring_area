@@ -19,6 +19,10 @@ module RingArea
       area <=> other.area
     end
 
+    def self.zero : RingArea::Area
+      new(0)
+    end
+
     # Adds the value of `self` to *other*.
     def +(other : RingArea::Area) : RingArea::Area
       RingArea::Area.new(self.area + other.area)

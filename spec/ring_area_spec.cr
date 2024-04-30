@@ -41,5 +41,6 @@ describe RingArea do
     it { (ring_area_1 + ring_area_2).should be_a(RingArea::Area) }
     it { (ring_area_1 + ring_area_2).to_meters.should eq(7798346482558.176) }
     it { (ring_area_1 - ring_area_2).to_meters.should eq(7699436737396.736) }
+    it { [ring_area_1, ring_area_2].sum.to_meters.should eq(7798346482558.176) }
   end
 end
