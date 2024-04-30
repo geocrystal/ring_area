@@ -27,7 +27,10 @@ describe RingArea do
   end
 
   describe "<=>" do
-    it { (coordinates == other_coordinates).should be_false }
-    it { (coordinates > other_coordinates).should be_true }
+    ring_area_1 = RingArea.ring_area(coordinates)
+    ring_area_2 = RingArea.ring_area(other_coordinates)
+
+    it { (ring_area_1 == ring_area_2).should be_false }
+    it { (ring_area_1 > ring_area_2).should be_true }
   end
 end
