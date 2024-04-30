@@ -15,7 +15,7 @@ module RingArea
       end
     {% end %}
 
-    def <=>(other : Haversine::Distance)
+    def <=>(other : RingArea::Area)
       area <=> other.area
     end
   end
