@@ -8,8 +8,8 @@ module RingArea
     end
 
     {% for factor in RingArea::FACTORS.keys %}
-      def to_{{factor.id}} : Number
-        factor = RingArea::FACTORS[:{{factor.id}}]
+      def to_{{ factor.id }} : Number
+        factor = RingArea::FACTORS[:{{ factor.id }}]
 
         @area * RingArea::FACTOR * factor
       end
@@ -25,12 +25,12 @@ module RingArea
 
     # Adds the value of `self` to *other*.
     def +(other : RingArea::Area) : RingArea::Area
-      RingArea::Area.new(self.area + other.area)
+      RingArea::Area.new(area + other.area)
     end
 
     # Removes the value of *other* from `self`.
     def -(other : RingArea::Area) : RingArea::Area
-      RingArea::Area.new(self.area - other.area)
+      RingArea::Area.new(area - other.area)
     end
   end
 end
